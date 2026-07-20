@@ -27,9 +27,13 @@ domain-specific assistant to life.
 
     ![](./media/image2.png)
 
+3.  Select **Skip to configure**.
+
+    ![](./media/image22.png)
+    
 3.  Select the **Describe** tab.
 
-    ![](./media/image3.png)
+    ![](./media/image23.png)
 
 4.  You can start defining the custom agent. You can choose a template
     to start from, or you can simply *describe* the agent by providing a
@@ -38,7 +42,7 @@ domain-specific assistant to life.
 
     +++You are an expert gardener, and you help users to maintain and improve their home garden providing detailed instructions and advice about the best practices for home gardening.+++
 
-    ![](./media/image4.png)
+    ![](./media/image24.png)
 
 5.  Once you have provided the instructions, the initial details are
     populated.
@@ -46,14 +50,14 @@ domain-specific assistant to life.
 6.  You can rename the agent if needed. Provide the following prompt to
     do so +++Name it as “Gardening assistant”+++.
 
-    ![](./media/image5.png)
+    ![](./media/image25.png)
 
 7.  If you are asked about refining instructions further, provide the
     following sentence.
 
     +++Focus on suggesting ways to keep plants and flowers shining and gorgeous+++
 
-    ![](./media/image6.png)
+    ![](./media/image26.png)
 
 8.  Keep on interacting with the agent builder until it does have all
     the information needed to create the agent. Provide the following
@@ -61,29 +65,27 @@ domain-specific assistant to life.
 
     +++Focus on highlighting the importance of nature and plants/flowers to be present in every house!+++
 
-    ![](./media/image7.png)
-
-    ![](./media/image8.png)
+    ![](./media/image27.png)
 
 9.  Then give an instruction of the agent tone as below.
 
     +++Use a professional, yet friendly, tone.+++
 
-    ![](./media/image9.png)
+    ![](./media/image28.png)
 
 10. Click on **Create** on the top right to create the agent.
 
-    ![](./media/image10.png)
+    ![](./media/image29.png)
 
     ![](./media/image11.png)
 
-11. Select **Go to agent** once the agent is created.
+12. Select **Start chat** once the agent is created, to start the conversation.
 
-    ![](./media/image12.png)
+    ![](./media/image30.png)
 
 12. This opens the created agent.
 
-    ![](./media/image13.png)
+    ![](./media/image31.png)
 
     >[!Alert] **Alert:** If the agent does not open automatically, **refresh** the page and select the **created gardening agent** from the left pane.
     >
@@ -93,7 +95,9 @@ domain-specific assistant to life.
 
     +++Give me tips to keep Rose plants fresh+++
 
-    ![](./media/image15.png)
+    ![](./media/image32.png)
+
+    ![](./media/image33.png)
 
     ## Summary:
 
