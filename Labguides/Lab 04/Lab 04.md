@@ -25,7 +25,7 @@ In this exercise, you will import a pre existing Solution.
     ![](./media/image1.png)
 
 5.  Select **Import solution**. Click on **Browse** and select the
-    **zip** file starting with **Operative** form **C:\LabFiles** and
+    **zip** file starting with **Operative** from **C:\LabFiles\Hiring agent** and
     select **Open**.
 
     ![](./media/image2.png)
