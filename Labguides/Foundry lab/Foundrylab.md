@@ -1,9 +1,9 @@
-# Lab – Orchestrating multi-agent AI for retail using Copilot Studio, Microsoft Foundry, and Fabric
+# Lab 12 – Orchestrating multi-agent AI for retail using Copilot Studio and Microsoft Fabric
 
 ## Objective:
 
 Build an intelligent, multi-agent retail assistant using Microsoft
-Copilot Studio, MicrosoftFoundry, and Microsoft Fabric. In this lab, you
+Copilot Studio and Microsoft Fabric. In this lab, you
 will design and implement a customer-facing AI system that orchestrates
 across specialized agents to handle product discovery, customer support,
 policy queries, and real-time operational insights.
@@ -156,220 +156,7 @@ using its knowledge base, ensuring reliable and grounded interactions.
     You have successfully built the foundational Copilot Studio agent that
 serves as the orchestrator for customer interactions.
 
-## Exercise 2: Foundry agent
-
-In this exercise, you will enhance the solution by creating a
-specialized product expert agent using Microsoft Foundry and integrating
-it with the Copilot Studio agent.
-
-### Task 1: Create Foundry resource
-
-In this task, you will create the **TrailGear Expert** agent in Foundry
-and configure it with product-specific knowledge to enable intelligent
-recommendations and comparisons.
-
->[!Alert] In order to successfully build and test this agent, we must **add a role assignment** to your user account in the Azure Portal by completing the following steps:
->
-> 1. Go to +++https://portal.azure.com/+++, on the homepage select **Subscriptions**.
-> 2. Select your subscription, **@lab.CloudSubscription.Name**
-> 3. On the left hand panel, select **Access Control (IAM)**.
-> 4. Select **+ Add**, **Add Role Assignment**.
-> 5. Search for and select +++Azure AI Administrator+++, then select **Next**.
-> 6. Under the **Members** tab, leave the *Assign access to* as **User, group or service principal**.
-> 7. Select **+ Select Members**
-> 8. Enter your cloud credential username: +++@lab.CloudPortalCredential(User1).Username+++, select your user name and press **Select** to apply.
-> 9. Select **Review and Assign** twice on the bottom of the page and wait for the role assignment to complete.
-
-
-1.  On the Home page of the Azure portal, select **Foundry** from
-    the **Home** page.
-
-    ![](https://raw.githubusercontent.com/technofocus-pte/entrprsagntscpltstdfrntr/refs/heads/main/Labguides/Foundry%20lab/media/image20.png)
-
-2.  Select **Use with Foundry** -\> **Foundry** -\> **+ Create to
-    create** to create the new Foundry resource.
-
-    ![](https://raw.githubusercontent.com/technofocus-pte/entrprsagntscpltstdfrntr/refs/heads/main/Labguides/Foundry%20lab/media/image21.png)
-
-3.  Enter the below details, select the nearest region and select
-    **Review + create**.
-
-    -   Resource Group - **@lab.CloudResourceGroup(ResourceGroup1).Name**
-    
-    -   Name - +++resource@lab.LabInstance.Id+++
-  
-    -   Location - **@lab.CloudResourceGroup(ResourceGroup1).Location**
-
-    -   Default project name - +++proj@lab.LabInstance.Id+++
-
-    ![](https://raw.githubusercontent.com/technofocus-pte/entrprsagntscpltstdfrntr/refs/heads/main/Labguides/Foundry%20lab/media/image22.png)
-
-5.  Select **Create** in the next screen.
-
-    ![](https://raw.githubusercontent.com/technofocus-pte/entrprsagntscpltstdfrntr/refs/heads/main/Labguides/Foundry%20lab/media/image23.png)
-
-6.  Once the resource is created, select **Go to resource** and then
-    select **Go to Foundry portal**. This will take you to the
-    **Microsoft Foundry** page.
-
-    ![](https://raw.githubusercontent.com/technofocus-pte/entrprsagntscpltstdfrntr/refs/heads/main/Labguides/Foundry%20lab/media/image24.png)
-
-    ![](https://raw.githubusercontent.com/technofocus-pte/entrprsagntscpltstdfrntr/refs/heads/main/Labguides/Foundry%20lab/media/image25.png)
-
-7.  Toggle **on** the **New Foundry** option.
-
-    ![](https://raw.githubusercontent.com/technofocus-pte/entrprsagntscpltstdfrntr/refs/heads/main/Labguides/Foundry%20lab/media/image26.png)
-
-8.  Select **Build** from the top menu since you will be building a new
-    agent now.
-
-    ![](https://raw.githubusercontent.com/technofocus-pte/entrprsagntscpltstdfrntr/refs/heads/main/Labguides/Foundry%20lab/media/image27.png)
-
-9.  Select **Create agent** to create a new product expert agent.
-
-    ![](https://raw.githubusercontent.com/technofocus-pte/entrprsagntscpltstdfrntr/refs/heads/main/Labguides/Foundry%20lab/media/image28.png)
-
-10.  Enter the name of the agent as +++TrailGearExpert+++ and then select
-    **Create**.
-
-    ![](https://raw.githubusercontent.com/technofocus-pte/entrprsagntscpltstdfrntr/refs/heads/main/Labguides/Foundry%20lab/media/image29.png)
-
-11. Once the agent is created, enter the below instructions in the
-    Instructions areas of the agent and then select **Save**.
-
-    ```
-    You are TrailGear Expert, a product specialist for outdoor and camping gear.
-
-    Your responsibilities:
-    - Provide accurate and detailed information about products such as backpacks, tents, and camping accessories.
-    - Recommend products based on user needs (e.g., trekking duration, weather conditions, group size).
-    - Compare products when asked.
-    - Use only the provided knowledge sources.
-
-    Guidelines:
-    - Ask follow-up questions if user intent is unclear.
-    - Provide structured recommendations (features, use case, why it fits).
-    - Do not answer questions related to refunds, shipping, or support—those are handled by another agent.
-
-    ```
-
-    ![](https://raw.githubusercontent.com/technofocus-pte/entrprsagntscpltstdfrntr/refs/heads/main/Labguides/Foundry%20lab/media/image30.png)
-
-12. Select the **Upload files** option -\> **Browse for files**.
-
-    ![](https://raw.githubusercontent.com/technofocus-pte/entrprsagntscpltstdfrntr/refs/heads/main/Labguides/Foundry%20lab/media/image31.png)
-
-    ![](https://raw.githubusercontent.com/technofocus-pte/entrprsagntscpltstdfrntr/refs/heads/main/Labguides/Foundry%20lab/media/image32.png)
-
-13. Navigate to **C:\Labfiles\Foundry agent**, select all the files
-    under it and select **Open**.
-
-    ![](https://raw.githubusercontent.com/technofocus-pte/entrprsagntscpltstdfrntr/refs/heads/main/Labguides/Foundry%20lab/media/image33.png)
-
-14. Select **Attach** to add the files to the agent.
-
-    ![](https://raw.githubusercontent.com/technofocus-pte/entrprsagntscpltstdfrntr/refs/heads/main/Labguides/Foundry%20lab/media/image34.png)
-
-15. Once all the configuration is done, select **Save** to save the
-    agent.
-
-    ![](https://raw.githubusercontent.com/technofocus-pte/entrprsagntscpltstdfrntr/refs/heads/main/Labguides/Foundry%20lab/media/image35.png)
-
-    You have successfully created and configured the Foundry agent to
-provide detailed product knowledge and recommendations.
-
-### Task 2: Connect Foundry agent to Copilot Studio agent
-
-In this task, you will connect the Foundry agent to the Copilot Studio
-agent, enabling seamless delegation of product-related queries.
-
-1.  Navigate back to the Copilot Studio – TrailAssist Concierage agent
-    and select the **Agents** tab.
-
-    ![](https://raw.githubusercontent.com/technofocus-pte/entrprsagntscpltstdfrntr/refs/heads/main/Labguides/Foundry%20lab/media/image36.png)
-
-2.  Select **Connect to an external agent** -\> **Microsoft Foundry** to
-    add the agent created in the Foundry.
-
-    ![](https://raw.githubusercontent.com/technofocus-pte/entrprsagntscpltstdfrntr/refs/heads/main/Labguides/Foundry%20lab/media/image37.png)
-
-3.  Select **Create new connection** to establish connection with the
-    Foundry.
-
-    ![](https://raw.githubusercontent.com/technofocus-pte/entrprsagntscpltstdfrntr/refs/heads/main/Labguides/Foundry%20lab/media/image38.png)
-
-4.  Navigate back to the Foundry tab, select **Home** and copy the
-    **Project endpoint** from there.
-
-    ![](https://raw.githubusercontent.com/technofocus-pte/entrprsagntscpltstdfrntr/refs/heads/main/Labguides/Foundry%20lab/media/image39.png)
-
-5.  Paste the copied endpoint in the Copilot Studio – create connection
-    pane and then select **Create**.
-
-    ![](https://raw.githubusercontent.com/technofocus-pte/entrprsagntscpltstdfrntr/refs/heads/main/Labguides/Foundry%20lab/media/image40.png)
-
-6.  Once the connection is established, click **Next**.
-
-    ![](https://raw.githubusercontent.com/technofocus-pte/entrprsagntscpltstdfrntr/refs/heads/main/Labguides/Foundry%20lab/media/image41.png)
-
-7.  Enter the below details and select **Add and configure**.
-
-    - Name - +++TrailGearExpert+++
-
-    - Description - `A specialized AI agent that provides detailed
-      product knowledge, comparisons, and personalized recommendations
-      for outdoor gear including backpacks, tents, and camping
-      accessories.`
-
-    - Agent Id - +++TrailGearExpert+++
-
-    ![](https://raw.githubusercontent.com/technofocus-pte/entrprsagntscpltstdfrntr/refs/heads/main/Labguides/Foundry%20lab/media/image42.png)
-
-    ![](https://raw.githubusercontent.com/technofocus-pte/entrprsagntscpltstdfrntr/refs/heads/main/Labguides/Foundry%20lab/media/image43.png)
-
-    You have successfully integrated the Foundry agent, enabling the Copilot
-Studio agent to delegate product-specific queries to a specialized
-agent.
-
-### Task 3: Test the agent
-
-In this task, you will test the integrated setup to validate that
-product-related queries are correctly routed to the Foundry agent.
-
-1.  Open the Test pane and enter:
-    `Which backpack is best for a 3 day trek?` then select **Send**.
-
-    ![](https://raw.githubusercontent.com/technofocus-pte/entrprsagntscpltstdfrntr/refs/heads/main/Labguides/Foundry%20lab/media/image44.png)
-
-3.  The first time, it will ask to open the **connection manager** and
-    **connect**. Follow the prompts and create the connection and then
-    ask the same question in the Test pane.
-
-    ![](https://raw.githubusercontent.com/technofocus-pte/entrprsagntscpltstdfrntr/refs/heads/main/Labguides/Foundry%20lab/media/image45.png)
-
-    ![](https://raw.githubusercontent.com/technofocus-pte/entrprsagntscpltstdfrntr/refs/heads/main/Labguides/Foundry%20lab/media/image46.png)
-
-    ![](https://raw.githubusercontent.com/technofocus-pte/entrprsagntscpltstdfrntr/refs/heads/main/Labguides/Foundry%20lab/media/image47.png)
-
-    ![](https://raw.githubusercontent.com/technofocus-pte/entrprsagntscpltstdfrntr/refs/heads/main/Labguides/Foundry%20lab/media/image48.png)
-
-    ![](https://raw.githubusercontent.com/technofocus-pte/entrprsagntscpltstdfrntr/refs/heads/main/Labguides/Foundry%20lab/media/image49.png)
-
-4.  From the Activity tab, open the latest activity to see the details
-    of the chat. You can see that the agent has invoked the
-    TrailGearExpert – Foundry agent to answer this question.
-
-    ![](https://raw.githubusercontent.com/technofocus-pte/entrprsagntscpltstdfrntr/refs/heads/main/Labguides/Foundry%20lab/media/image50.png)
-
-    ![](https://raw.githubusercontent.com/technofocus-pte/entrprsagntscpltstdfrntr/refs/heads/main/Labguides/Foundry%20lab/media/image51.png)
-
-    You have validated that the Copilot Studio agent can successfully invoke
-the Foundry agent to handle product-related queries.
-
-    You have extended your solution by adding a specialized product agent,
-demonstrating agent collaboration and domain-specific intelligence.
-
-## Exercise 3: Create Fabric Data Agent
+## Exercise 2: Create Fabric Data Agent
 
 In this exercise, you will further enhance the solution by introducing a
 Fabric Data Agent to provide real-time insights from structured business
@@ -595,9 +382,7 @@ orchestration.
 In this lab, you created the **Retail Assistant**, a modern AI solution
 for an outdoor retail company. You began by building a Copilot Studio
 agent that serves as the primary customer interface for handling support
-and policy-related queries. You then extended its capabilities by
-integrating a specialized product expert agent built using Microsoft
-Foundry to provide intelligent product recommendations. Finally, you
+and policy-related queries. You then
 added a Fabric Data Agent to enable real-time insights from structured
 business data such as orders and inventory.
 
