@@ -119,7 +119,7 @@ shipping, returns, and customer support policies.
 
 15. Ensure that the added documents change to **Ready** state.
 
-    >[!Alert] It may take up to 10 mminutes for the status to change to "Ready".
+    >[!Alert] It may take up to 10 minutes for the status to change to "Ready".
 
     ![](https://raw.githubusercontent.com/technofocus-pte/entrprsagntscpltstdfrntr/refs/heads/main/Labguides/Foundry%20lab/media/image15.png)
 
