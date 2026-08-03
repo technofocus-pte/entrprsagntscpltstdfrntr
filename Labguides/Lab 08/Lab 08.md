@@ -69,7 +69,7 @@ connectivity
     
     ![](./media/image6.png)
 
-7.  Select **+ Add knowledge** to add a knowledge source. Browse and choose **Account data.xlsx** from C:\LabFiles and seelct **Add to agent**.
+7.  Select **+ Add knowledge** to add a knowledge source. Browse and choose **Account data.xlsx** from C:\LabFiles\Dataverse and select **Add to agent**.
 
     ![](./media/image33.png)
 
